@@ -5,7 +5,7 @@
     {% render 'cart-drawer' %}
 {% endcomment %}
 
-<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+{%- render 'vite-tag' with 'cart-drawer.js' -%}
 
 <style>
   .drawer {

@@ -1,0 +1,3 @@
+[submodule "packages/vite-plugin-shopify"]
+	path = packages/vite-plugin-shopify
+	url = git@github.com:barrel/vite-plugin-shopify.git

@@ -1,17 +1,6 @@
-class CartRemoveButton extends HTMLElement {
-  constructor() {
-    super();
-    this.addEventListener('click', (event) => {
-      event.preventDefault();
-      const cartItems = this.closest('cart-items') || this.closest('cart-drawer-items');
-      cartItems.updateQuantity(this.dataset.index, 0);
-    });
-  }
-}
+import { debounce } from '@/lib/utils';
 
-customElements.define('cart-remove-button', CartRemoveButton);
-
-class CartItems extends HTMLElement {
+export default class CartItems extends HTMLElement {
   constructor() {
     super();
 
@@ -154,16 +143,3 @@ class CartItems extends HTMLElement {
 }
 
 customElements.define('cart-items', CartItems);
-
-if (!customElements.get('cart-note')) {
-  customElements.define('cart-note', class CartNote extends HTMLElement {
-    constructor() {
-      super();
-
-      this.addEventListener('change', debounce((event) => {
-        const body = JSON.stringify({ note: event.target.value });
-        fetch(`${routes.cart_update_url}`, {...fetchConfig(), ...{ body }});
-      }, 300))
-    }
-  });
-};

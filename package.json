@@ -1,0 +1,16 @@
+{
+  "name": "dawn",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm clean && vite build",
+    "clean": "find -E assets -regex '.+\\..{8}\\..+' -delete",
+    "postinstall": "pnpm -C packages/vite-plugin-shopify run build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^2.9.13",
+    "vite-plugin-shopify": "workspace:*"
+  }
+}
