@@ -88,3 +88,7 @@ class CustomerAddresses {
     }
   }
 }
+
+window.onload = () => {
+  new CustomerAddresses();
+}

@@ -1,6 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
-
-<script src="{{ 'customer.js' | asset_url }}" defer></script>
+{%- render 'vite-tag' with 'main-addresses.js' -%}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -270,12 +269,6 @@
     {%- endif -%}
   </div>
 {%- endpaginate -%}
-
-<script>
-  window.onload = () => {
-    typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
-  }
-</script>
 
 {% schema %}
 {
