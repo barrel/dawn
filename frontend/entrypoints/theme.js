@@ -1,4 +1,5 @@
 import '@/lib/a11y';
+import '@/components/sticky-header';
 import '@/components/cart-notification';
 import '@/components/details-disclosure';
 import '@/components/details-modal';
@@ -12,3 +13,4 @@ import '@/components/slider-component';
 import '@/components/slideshow-component';
 import '@/components/variant-selects';
 import '@/components/variant-radios';
+import '@/components/localization-form';

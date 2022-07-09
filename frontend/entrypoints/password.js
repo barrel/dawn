@@ -1,4 +1,5 @@
 import '@/lib/a11y';
+import '@/components/sticky-header';
 import '@/components/password-modal';
 import '@/components/quantity-input';
 import '@/components/menu-drawer';
@@ -10,3 +11,4 @@ import '@/components/slider-component';
 import '@/components/slideshow-component';
 import '@/components/variant-selects';
 import '@/components/variant-radios';
+import '@/components/localization-form';
