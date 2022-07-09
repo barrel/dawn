@@ -1,3 +1,5 @@
+import ModalDialog from './modal-dialog';
+
 if (!customElements.get('quick-add-modal')) {
   customElements.define('quick-add-modal', class QuickAddModal extends ModalDialog {
     constructor() {
