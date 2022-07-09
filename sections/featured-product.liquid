@@ -21,6 +21,8 @@
 
 <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}" media="print" onload="this.media='all'">
 
+{%- render 'vite-tag' with 'featured-product.js' -%}
+
 {%- assign product = section.settings.product -%}
 
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -142,7 +144,9 @@
                 </quantity-input>
               </div>
             {%- when 'share' -%}
-              <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+              <script>
+                window.enableShare = true;
+              </script>
               <share-button id="Share-{{ section.id }}" class="share-button" {{ block.shopify_attributes }}>
                 <button class="share-button__button hidden">
                   {% render 'icon-share' %}
@@ -375,12 +379,13 @@
   </div>
 </section>
 
-<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 {%- if first_3d_model -%}
   <script type="application/json" id="ProductJSON-{{ product.id }}">
     {{ product.media | where: 'media_type', 'model' | json }}
   </script>
-  <script src="{{ 'product-model.js' | asset_url }}" defer></script>
+    <script>
+      window.first3dModelId = {{ first_3d_model.id | json }};
+    </script>
 {%- endif -%}
 
 {%- liquid
@@ -460,8 +465,9 @@
 </script>
 
 {% if product.media.size > 0 %}
-  <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
+  <script>
+    window.mediaCount = {{ product.media.size | json }};
+  </script>
 {% endif %}
 
 {% schema %}
