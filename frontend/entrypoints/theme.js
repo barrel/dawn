@@ -14,3 +14,7 @@ import '@/components/slideshow-component';
 import '@/components/variant-selects';
 import '@/components/variant-radios';
 import '@/components/localization-form';
+
+if (window.predictiveSearchEnabled) {
+  import('@/components/predictive-search');
+}
