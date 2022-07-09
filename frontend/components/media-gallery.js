@@ -1,3 +1,5 @@
+import { debounce, pauseAllMedia } from '@/lib/utils';
+
 if (!customElements.get('media-gallery')) {
   customElements.define('media-gallery', class MediaGallery extends HTMLElement {
     constructor() {
@@ -82,7 +84,7 @@ if (!customElements.get('media-gallery')) {
     }
 
     playActiveMedia(activeItem) {
-      window.pauseAllMedia();
+      pauseAllMedia();
       const deferredMedia = activeItem.querySelector('.deferred-media');
       if (deferredMedia) deferredMedia.loadContent(false);
     }

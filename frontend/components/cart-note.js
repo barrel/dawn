@@ -1,3 +1,5 @@
+import { debounce, fetchConfig } from '@/lib/utils';
+
 if (!customElements.get('cart-note')) {
   customElements.define('cart-note', class CartNote extends HTMLElement {
     constructor() {

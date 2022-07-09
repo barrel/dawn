@@ -1,3 +1,5 @@
+import { trapFocus, removeTrapFocus } from '@/lib/a11y'
+
 class CartDrawer extends HTMLElement {
   constructor() {
     super();

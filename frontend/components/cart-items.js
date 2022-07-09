@@ -1,4 +1,5 @@
-import { debounce } from '@/lib/utils';
+import { debounce, fetchConfig } from '@/lib/utils';
+import { trapFocus } from '@/lib/a11y';
 
 export default class CartItems extends HTMLElement {
   constructor() {

@@ -1,3 +1,5 @@
+import { pauseAllMedia } from '@/lib/utils';
+
 export default class DeferredMedia extends HTMLElement {
   constructor() {
     super();
@@ -7,7 +9,7 @@ export default class DeferredMedia extends HTMLElement {
   }
 
   loadContent(focus = true) {
-    window.pauseAllMedia();
+    pauseAllMedia();
     if (!this.getAttribute('loaded')) {
       const content = document.createElement('div');
       content.appendChild(this.querySelector('template').content.firstElementChild.cloneNode(true));

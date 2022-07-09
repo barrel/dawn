@@ -1,4 +1,4 @@
-function pauseAllMedia() {
+export function pauseAllMedia() {
   document.querySelectorAll('.js-youtube').forEach((video) => {
     video.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
   });
@@ -19,7 +19,7 @@ export function debounce(fn, wait) {
   };
 }
 
-function fetchConfig(type = 'json') {
+export function fetchConfig(type = 'json') {
   return {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': `application/${type}` }

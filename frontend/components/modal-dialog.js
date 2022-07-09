@@ -1,3 +1,6 @@
+import { pauseAllMedia } from '@/lib/utils';
+import { trapFocus, removeTrapFocus } from '@/lib/a11y';
+
 export default class ModalDialog extends HTMLElement {
   constructor() {
     super();
@@ -32,7 +35,7 @@ export default class ModalDialog extends HTMLElement {
     this.setAttribute('open', '');
     if (popup) popup.loadContent();
     trapFocus(this, this.querySelector('[role="dialog"]'));
-    window.pauseAllMedia();
+    pauseAllMedia();
   }
 
   hide() {
@@ -40,7 +43,7 @@ export default class ModalDialog extends HTMLElement {
     document.body.dispatchEvent(new CustomEvent('modalClosed'));
     this.removeAttribute('open');
     removeTrapFocus(this.openedBy);
-    window.pauseAllMedia();
+    pauseAllMedia();
   }
 }
 customElements.define('modal-dialog', ModalDialog);
