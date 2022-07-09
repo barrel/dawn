@@ -18,3 +18,7 @@ import '@/components/localization-form';
 if (window.predictiveSearchEnabled) {
   import('@/components/predictive-search');
 }
+
+if (Shopify.designMode) {
+  import('@/lib/theme-editor');
+}
