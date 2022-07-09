@@ -1,5 +1,6 @@
 import '@/lib/a11y';
 import '@/components/cart-notification';
+import '@/components/details-disclosure';
 import '@/components/details-modal';
 import '@/components/quantity-input';
 import '@/components/menu-drawer';

@@ -1,3 +1,5 @@
+import ModalDialog from './modal-dialog';
+
 if (!customElements.get('product-modal')) {
   customElements.define('product-modal', class ProductModal extends ModalDialog {
     constructor() {

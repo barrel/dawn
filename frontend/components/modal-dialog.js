@@ -1,4 +1,4 @@
-class ModalDialog extends HTMLElement {
+export default class ModalDialog extends HTMLElement {
   constructor() {
     super();
     this.querySelector('[id^="ModalClose-"]').addEventListener(

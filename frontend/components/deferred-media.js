@@ -1,4 +1,4 @@
-class DeferredMedia extends HTMLElement {
+export default class DeferredMedia extends HTMLElement {
   constructor() {
     super();
     const poster = this.querySelector('[id^="Deferred-Poster-"]');

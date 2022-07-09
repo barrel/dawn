@@ -1,3 +1,5 @@
+import DeferredMedia from './deferred-media';
+
 if (!customElements.get('product-model')) {
   customElements.define('product-model', class ProductModel extends DeferredMedia {
     constructor() {
