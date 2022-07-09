@@ -1,3 +1,4 @@
+import '@/lib/a11y';
 import '@/components/password-modal';
 import '@/components/quantity-input';
 import '@/components/menu-drawer';

@@ -1,4 +1,4 @@
-import { trapFocus, removeTrapFocus } from '@/lib/utils';
+import { trapFocus, removeTrapFocus } from '@/lib/a11y';
 
 export default class DetailsModal extends HTMLElement {
   constructor() {
