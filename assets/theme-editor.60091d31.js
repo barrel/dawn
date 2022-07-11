@@ -1,0 +1,2 @@
+document.addEventListener("shopify:block:select",function(e){if(!e.target.classList.contains("slideshow__slide"))return;const t=e.target.closest("slideshow-component");t.pause(),setTimeout(function(){t.slider.scrollTo({left:e.target.offsetLeft})},200)});document.addEventListener("shopify:block:deselect",function(e){if(!e.target.classList.contains("slideshow__slide"))return;const t=e.target.closest("slideshow-component");t.autoplayButtonIsSetToPlay&&t.play()});
+//# sourceMappingURL=theme-editor.60091d31.js.map

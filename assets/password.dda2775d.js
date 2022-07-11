@@ -1,0 +1,2 @@
+import"./a11y.88ed79d0.js";import{D as t}from"./localization-form.bef82528.js";import"./modal-dialog.d553889f.js";import"./deferred-media.1611af0f.js";import"./utils.d62a6586.js";class e extends t{constructor(){super(),this.querySelector('input[aria-invalid="true"]')&&this.open({target:this.querySelector("details")})}}customElements.define("password-modal",e);
+//# sourceMappingURL=password.dda2775d.js.map

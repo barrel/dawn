@@ -1,0 +1,2 @@
+class r extends HTMLElement{constructor(){super();const e=this.querySelector("a");e.setAttribute("role","button"),e.addEventListener("click",this.closeFilter.bind(this)),e.addEventListener("keyup",t=>{t.preventDefault(),t.code.toUpperCase()==="SPACE"&&this.closeFilter(t)})}closeFilter(e){e.preventDefault(),(this.closest("facet-filters-form")||document.querySelector("facet-filters-form")).onActiveFilterClick(e)}}customElements.define("facet-remove",r);
+//# sourceMappingURL=facet-remove.c5a697cd.js.map

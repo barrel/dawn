@@ -1,0 +1,1 @@
+{"version":3,"mappings":"4CAAA,CAAI,MAAO,WAAa,UACtB,6GACA,uFACA","names":[],"sources":["../frontend/entrypoints/main-cart-items.js"],"sourcesContent":["if (window.cartType !== 'drawer') {\n  import('@/components/cart-items');\n  import('@/components/cart-note');\n  import('@/components/cart-remove-button');\n}\n"],"file":"main-cart-items.fb17908e.js"}

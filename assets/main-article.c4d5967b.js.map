@@ -1,0 +1,1 @@
+{"version":3,"mappings":"4CAAA,CAAI,MAAO,aACT","names":[],"sources":["../frontend/entrypoints/main-article.js"],"sourcesContent":["if (window.enableShare) {\n  import('@/components/share');\n}\n"],"file":"main-article.c4d5967b.js"}
