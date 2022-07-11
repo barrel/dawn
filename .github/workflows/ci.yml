@@ -1,25 +1,26 @@
 name: CI
 on: [push]
 jobs:
-  lhci:
-    name: Lighthouse
-    runs-on: ubuntu-latest
+  build:
+    name: Build
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [15]
     steps:
       - uses: actions/checkout@v2
-      - name: Lighthouse
-        uses: shopify/lighthouse-ci-action@1.0
         with:
-          app_id: ${{ secrets.SHOP_APP_ID }}
-          app_password: ${{ secrets.SHOP_APP_PASSWORD }}
-          store: ${{ secrets.SHOP_STORE }}
-          password: ${{ secrets.SHOP_PASSWORD }}
-          lhci_github_app_token: ${{ secrets.LHCI_GITHUB_TOKEN }}
-  theme-check:
-    name: Theme Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Theme Check
-        uses: shopify/theme-check-action@v1
+          token: ${{ secrets.SUBMODULE_CLONE_TOKEN }}
+          submodules: recursive
+      - uses: pnpm/action-setup@v2.2.2
         with:
-          token: ${{ github.token }}
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
